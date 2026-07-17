@@ -31,4 +31,4 @@ Game 1, move 3. White (you) to play.
 
 Each move link opens a pre-filled GitHub issue. A workflow validates the move against the current position, runs MCTS over the latest [released checkpoint](https://github.com/leozh0u/blundernet/releases/tag/model-latest), commits the new board, and closes the issue with the engine's reply. When a game ends, the result lands on the scoreboard and a fresh game starts. All the code is in [scripts/](scripts/).
 
-Fair warning: the engine is young. Its first Stockfish anchor put it near 1000 Elo, so beating it is expected. It retrains every day, though. The scoreboard will show when that stops being funny.
+Btw: the engine is young. Its first Stockfish anchor put it near 1000 Elo, so beating it is expected. It retrains every day to get better.
