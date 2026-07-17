@@ -1,6 +1,6 @@
 {
   "game_no": 1,
-  "fen": "rnbqkbnr/ppp1pppp/3p4/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+  "fen": "r1bqkbnr/ppp1pppp/2np4/8/4P3/8/PPPPQPPP/RNB1KBNR w KQkq - 2 3",
   "moves": [
     {
       "san": "e4",
@@ -11,6 +11,16 @@
       "san": "d6",
       "uci": "d7d6",
       "by": "blundernet"
+    },
+    {
+      "san": "Qe2",
+      "uci": "d1e2",
+      "by": "leozh0u"
+    },
+    {
+      "san": "Nc6",
+      "uci": "b8c6",
+      "by": "blundernet"
     }
   ],
   "score": {
@@ -18,5 +28,5 @@
     "blundernet": 0,
     "draws": 0
   },
-  "updated": "2026-07-17 08:04 UTC"
+  "updated": "2026-07-17 08:13 UTC"
 }
