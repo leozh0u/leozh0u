@@ -1,10 +1,8 @@
 # Hi, I'm Leo
 
-CS sophomore at Rice. I grew up in New Zealand, where most of my time outside school went into fencing: I competed for NZ at World Championships, World Cups, and the Commonwealth Games, and captained the junior national team to an Oceania title.
+CS sophomore at Rice, originally from New Zealand. I build things and write down what broke along the way. Current projects: [blundernet](https://github.com/leozh0u/blundernet), a chess engine that retrains itself on a schedule; [relayq](https://github.com/leozh0u/relayq), a crash-safe Rust job queue I test by SIGKILLing its workers mid-job; [bare-metal STM32 motor firmware](https://github.com/leozh0u/stm32-bldc-motor-controller) written straight against the reference manual; and [quant-signals](https://github.com/leozh0u/quant-signals), a signal-research rig that so far mostly proves my trading ideas stop working once you charge them transaction costs. More on my [portfolio site](https://leozh0u.github.io/leo-portfolio/).
 
-These days I mostly build things and write down what broke along the way. Current projects: [blundernet](https://github.com/leozh0u/blundernet), a chess engine that retrains itself on a schedule; [relayq](https://github.com/leozh0u/relayq), a crash-safe Rust job queue I test by SIGKILLing its workers mid-job; [bare-metal STM32 motor firmware](https://github.com/leozh0u/stm32-bldc-motor-controller) written straight against the reference manual; and [quant-signals](https://github.com/leozh0u/quant-signals), a signal-research rig that so far mostly proves my trading ideas stop working once you charge them transaction costs. More on my [portfolio site](https://leozh0u.github.io/leo-portfolio/).
-
-Off the keyboard: drums (Grade 8, mostly rock), chess (peaked around 2000 on chess.com), watercolor, and an unironic love of The Lego Batman Movie.
+For fun: fencing (I competed for New Zealand for a long time), drums, chess, GeoGuessr, and drawing. I love Lego, own a collection I'm genuinely proud of, and hold lasting nostalgia for Ninjago and The Lego Batman Movie. I've also sunk a lot of hours into Minecraft: was very good at Bedwars, still a sweaty SMP grinder, and I've gone down the speedrunning rabbit hole too.
 
 ## Play chess against my engine
 
