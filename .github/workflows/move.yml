@@ -1,0 +1,75 @@
+name: chess
+
+on:
+  issues:
+    types: [opened]
+
+concurrency:
+  group: chess-board
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  issues: write
+
+jobs:
+  move:
+    if: startsWith(github.event.issue.title, 'move|')
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+          cache: pip
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+          pip install torch --index-url https://download.pytorch.org/whl/cpu
+
+      - name: Fetch engine code and checkpoint
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          git clone --depth 1 https://github.com/leozh0u/blundernet /tmp/blundernet
+          gh release download model-latest -R leozh0u/blundernet -p model.pt -O game/model.pt
+
+      - name: Play the move
+        id: play
+        env:
+          ISSUE_TITLE: ${{ github.event.issue.title }}
+          PLAYER: ${{ github.event.issue.user.login }}
+          BLUNDERNET_SRC: /tmp/blundernet/src
+        run: |
+          set +e
+          python scripts/play.py "$ISSUE_TITLE" "$PLAYER"
+          code=$?
+          set -e
+          if [ "$code" = "0" ]; then
+            echo "played=true" >> "$GITHUB_OUTPUT"
+          elif [ "$code" = "2" ]; then
+            echo "played=false" >> "$GITHUB_OUTPUT"
+          else
+            exit "$code"
+          fi
+
+      - name: Commit the new position
+        if: steps.play.outputs.played == 'true'
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md game/state.json game/board.svg game/history.jsonl
+          git commit -m "Game: ${{ github.event.issue.title }} by @${{ github.event.issue.user.login }}"
+          for i in 1 2 3; do git push && break || { git pull --rebase && sleep 2; }; done
+
+      - name: Reply and close the issue
+        if: always() && steps.play.outcome == 'success'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh issue comment ${{ github.event.issue.number }} -R ${{ github.repository }} --body-file game/reply.md
+          gh issue close ${{ github.event.issue.number }} -R ${{ github.repository }}

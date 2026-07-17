@@ -1,0 +1,11 @@
+{
+  "game_no": 1,
+  "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
+  "moves": [],
+  "score": {
+    "humanity": 0,
+    "blundernet": 0,
+    "draws": 0
+  },
+  "updated": "2026-07-17 07:53 UTC"
+}
