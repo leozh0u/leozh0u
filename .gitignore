@@ -1,4 +1,2 @@
-.venv/
-game/model.pt
-game/reply.md
 __pycache__/
+.DS_Store
