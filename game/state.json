@@ -1,11 +1,22 @@
 {
   "game_no": 1,
-  "fen": "rnbqkbnr/pppppppp/8/8/8/8/PPPPPPPP/RNBQKBNR w KQkq - 0 1",
-  "moves": [],
+  "fen": "rnbqkbnr/ppp1pppp/3p4/8/4P3/8/PPPP1PPP/RNBQKBNR w KQkq - 0 2",
+  "moves": [
+    {
+      "san": "e4",
+      "uci": "e2e4",
+      "by": "leozh0u"
+    },
+    {
+      "san": "d6",
+      "uci": "d7d6",
+      "by": "blundernet"
+    }
+  ],
   "score": {
     "humanity": 0,
     "blundernet": 0,
     "draws": 0
   },
-  "updated": "2026-07-17 07:53 UTC"
+  "updated": "2026-07-17 07:57 UTC"
 }
